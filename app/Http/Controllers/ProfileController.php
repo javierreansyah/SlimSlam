@@ -25,7 +25,7 @@ class ProfileController extends Controller
      * Update the user's profile information.
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
-    {
+    {        
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
@@ -35,6 +35,22 @@ class ProfileController extends Controller
         $request->user()->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
+    }
+
+    public function updateProfilePicture(Request $request) : RedirectResponse {
+        $request->validate([
+            'profile-picture' => 'image|file|max:1024'
+        ]);
+
+        if ($request->hasFile('profile-picture')) {
+            $user = $request->user();
+
+            $profilePicturePath = $request->file('profile-picture')->store('profile-pictures', 'public');
+
+            $user->profile_picture = $profilePicturePath;
+            $user->save();
+        }
+        return Redirect::route('profile.edit')->with('status-image', 'profile-picture-updated');
     }
 
     /**

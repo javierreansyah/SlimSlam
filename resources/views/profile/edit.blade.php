@@ -15,6 +15,12 @@
 
             <div class="p-4 sm:p-8 bg-card shadow sm:rounded-lg">
                 <div class="max-w-xl">
+                    @include('profile.partials.update-profile-picture-form')
+                </div>
+            </div>
+
+            <div class="p-4 sm:p-8 bg-card shadow sm:rounded-lg">
+                <div class="max-w-xl">
                     @include('profile.partials.update-password-form')
                 </div>
             </div>
