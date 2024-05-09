@@ -51,7 +51,6 @@ class WorkoutSeeder extends Seeder
                     ['name' => 'Lunges', 'description' => '10 Repetisi', 'duration' => 60],
                 ],
             ],
-            // Add more workouts as needed
         ];
 
         foreach ($workouts as $workoutData) {

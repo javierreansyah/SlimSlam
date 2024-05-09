@@ -85,10 +85,10 @@
         function nextExercise() {
             clearInterval(timer);
             var currentExercise = document.getElementById('exercise_' + currentIndex);
-            currentExercise.remove(); // Remove the current exercise card
+            currentExercise.remove();
             currentIndex++;
             if (currentIndex >= exercises.length) {
-                window.location.href = "/workouts"; // Redirect to workouts page if workout is finished
+                window.location.href = "/workouts";
                 return;
             }
             if (currentIndex === exercises.length - 1) {

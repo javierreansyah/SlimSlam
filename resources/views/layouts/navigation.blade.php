@@ -27,10 +27,10 @@
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-4 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-foreground bg-card hover:text-muted-foreground transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
-
                             <div class="pl-3">
-                                <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" alt="Current Profile Picture" class="w-8 h-8 rounded-full object-cover">
+                                <img src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('storage/placeholder.png') }}" alt="Current Profile Picture" class="w-8 h-8 rounded-full object-cover">
                             </div>
+                            
                         </button>
                     </x-slot>
 

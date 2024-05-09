@@ -18,13 +18,7 @@
         @method('patch')
 
         <div>
-            @if(Auth::user()->profile_picture)
-                <div class="mt-1">
-                    <img id="preview-image" src="{{ asset('storage/' . Auth::user()->profile_picture) }}" alt="Current Profile Picture" class="w-40 h-40 rounded-lg object-cover">
-                </div>
-            @else
-                <p class="text-sm text-gray-500">No profile picture uploaded</p>
-            @endif
+            <img id="preview-image" src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('storage/placeholder.png') }}" alt="Current Profile Picture" class="w-40 h-40 rounded-lg object-cover">
         </div>
 
         <div class="mt-4">
@@ -52,6 +46,7 @@
                 }
             }
         </script>
+
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
