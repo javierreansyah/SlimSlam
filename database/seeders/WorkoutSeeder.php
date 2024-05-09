@@ -26,6 +26,15 @@ class WorkoutSeeder extends Seeder
             [
                 'name' => 'Lunges',
             ],
+            [
+                'name' => 'Jumping Jacks',
+            ],
+            [
+                'name' => 'Backups',
+            ],
+            [
+                'name' => 'Mountain Climbs',
+            ],
         ];
 
         foreach ($exercises as $exercise) {
@@ -40,6 +49,10 @@ class WorkoutSeeder extends Seeder
                 'exercises' => [
                     ['name' => 'Pushups', 'repetitions' => 20],
                     ['name' => 'Situps', 'repetitions' => 20],
+                    ['name' => 'Jumping Jacks', 'repetitions' => 20],
+                    ['name' => 'Backups', 'repetitions' => 20],
+                    ['name' => 'Mountain Climbs', 'repetitions' => 20],
+                    ['name' => 'Situps', 'repetitions' => 40],
                 ],
             ],
             [

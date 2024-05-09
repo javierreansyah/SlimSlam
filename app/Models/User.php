@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -20,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'gender',
+        'birth_date',
+        'weight',
+        'height',
     ];
 
     /**
@@ -43,5 +48,13 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function age()
+    {
+        if ($this->birth_date) {
+            return Carbon::parse($this->birth_date)->age;
+        }
+        return null;
     }
 }
