@@ -18,6 +18,7 @@ return new class extends Migration
                 $table->id();
                 $table->string('name');
                 $table->string('slug')->unique();
+                $table->string('difficulty');
                 $table->text('description')->nullable();
                 $table->string('image')->nullable();
                 $table->timestamps();
@@ -38,7 +39,8 @@ return new class extends Migration
                 $table->id();
                 $table->unsignedBigInteger('workout_id');
                 $table->unsignedBigInteger('exercise_id');
-                $table->integer('repetitions');
+                $table->unsignedInteger('duration');
+                $table->string('description');
                 $table->timestamps();
 
                 $table->foreign('workout_id')->references('id')->on('workouts')->onDelete('cascade');

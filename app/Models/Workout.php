@@ -11,7 +11,7 @@ class Workout extends Model
 
     public function exercises()
     {
-        return $this->belongsToMany(Exercise::class)->withPivot('repetitions');
+        return $this->belongsToMany(Exercise::class)->withPivot('description', 'duration');
     }
 
     use HasFactory;
