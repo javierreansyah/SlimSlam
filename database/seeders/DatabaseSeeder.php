@@ -27,10 +27,10 @@ class DatabaseSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         // Seed measurements for the last 7 days
-        for ($i = 1; $i <= 7; $i++) {
+        for ($i = 1; $i <= 100; $i++) {
             $weight = $faker->numberBetween(50, 100); // Example weight
             $height = $faker->numberBetween(150, 200); // Example height
-            $recordedAt = Carbon::now()->subDays(7 - $i);
+            $recordedAt = Carbon::now()->subDays($i * 7);
 
             $userMeasurement = new UserMeasurement();
             $userMeasurement->user_id = $userId;
