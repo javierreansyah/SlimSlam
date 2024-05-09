@@ -21,15 +21,19 @@ class DatabaseSeeder extends Seeder
             'name' => 'Javier',
             'email' => 'javier@gmail.com',
             'password'=> bcrypt('password'),
+            'gender' => 'male',
+            'weight' => 82,
+            'height' => 175,
+            'birth_date' => Carbon::createFromDate(2002, 11, 16),
+            'last_weight_recorded_at' => now()->subDays(30)
         ]);
         
         $userId = 1; // Change this to the desired user ID
         $faker = \Faker\Factory::create();
 
-        // Seed measurements for the last 7 days
         for ($i = 1; $i <= 100; $i++) {
-            $weight = $faker->numberBetween(50, 100); // Example weight
-            $height = $faker->numberBetween(150, 200); // Example height
+            $weight = $faker->numberBetween(50, 100);
+            $height = $faker->numberBetween(150, 200);
             $recordedAt = Carbon::now()->subDays($i * 7);
 
             $userMeasurement = new UserMeasurement();
@@ -45,12 +49,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             WorkoutSeeder::class,
-            // Other seeders if you have
         ]);
     }
     private function calculateBMI($weight, $height)
     {
-        // BMI formula: BMI = weight(kg) / (height(m))^2
         return ($weight / pow($height / 100, 2));
     }
 }
