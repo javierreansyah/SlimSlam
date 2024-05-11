@@ -22,6 +22,7 @@ return new class extends Migration
             $table->float('weight')->nullable();
             $table->float('height')->nullable();
             $table->string('profile_picture')->nullable();
+            $table->timestamp('last_weight_recorded_at')->nullable()->default(now());
             $table->rememberToken();
             $table->timestamps();
         });

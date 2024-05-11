@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Models\UserMeasurement;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\ProfileUpdateRequest;
 
 class ProfileController extends Controller
 {
@@ -51,6 +53,30 @@ class ProfileController extends Controller
             $user->save();
         }
         return Redirect::route('profile.edit')->with('status-image', 'profile-picture-updated');
+    }
+
+    public function storeMeasurement(Request $request) {
+        $request->validate([
+            'weight' => 'required|numeric',
+        ]);
+        $weight = $request->weight;
+        $height = auth()->user()->height;
+        $bmi = $weight / (($height / 100) * ($height / 100));
+
+        $measurement = new UserMeasurement();
+        $measurement->user_id = auth()->id();
+        $measurement->weight = $weight;
+        $measurement->height = $height;
+        $measurement->bmi = $bmi;
+        $measurement->recorded_at = now();
+        $measurement->save();
+
+        $user = $request->user();
+        $user->weight = $weight;
+        $user->last_weight_recorded_at = now();
+        $user->save();
+
+        return redirect()->route('dashboard');
     }
 
     /**

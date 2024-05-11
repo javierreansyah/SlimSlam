@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="overlap-group">
+        <img class="image" src="img/image-2.png" />
+        <img class="close-up-athlete" src="img/close-up-athlete-running-23-2150845496-removebg-1.png" />
+        <img
+          class="temukan-belajar-dan"
+          src="img/temukan-belajar-dan-tumbuh-bersama-slimslam-solusi-kesehatan-digital-anda.png"
+        />
+      </div>
+    </div>
+  </body>
+</html>
