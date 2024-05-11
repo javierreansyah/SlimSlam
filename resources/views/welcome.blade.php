@@ -909,7 +909,7 @@
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
     <div class="relative min-h-screen flex justify-center ">
         <div class="relative w-full">
-            <header class="container fixed start-0 top-0 items-center gap-2 py-10 lg:grid-cols-3">
+            <header class="container fixed start-0 top-0 items-center gap-2 py-10 lg:grid-cols-3 bg-black">
                 <div class="flex lg:justify-center lg:col-start-2">
                     <svg class="h-12 w-auto text-primary" viewBox="0 0 62 65" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
