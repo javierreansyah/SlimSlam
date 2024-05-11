@@ -61,7 +61,7 @@ class ProfileController extends Controller
         ]);
         $weight = $request->weight;
         $height = auth()->user()->height;
-        $bmi = $weight / (($height / 100) * ($height / 100));
+        $bmi = $weight / (($height / 100) ** 2);
 
         $measurement = new UserMeasurement();
         $measurement->user_id = auth()->id();
