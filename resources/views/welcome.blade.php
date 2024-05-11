@@ -908,8 +908,8 @@
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
     <div class="relative min-h-screen flex justify-center ">
-        <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-            <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
+        <div class="relative w-full">
+            <header class="container fixed start-0 top-0 items-center gap-2 py-10 lg:grid-cols-3">
                 <div class="flex lg:justify-center lg:col-start-2">
                     <svg class="h-12 w-auto text-primary" viewBox="0 0 62 65" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -919,7 +919,7 @@
                     </svg>
                 </div>
                 @if (Route::has('login'))
-                    <nav class="-mx-3 flex flex-1 justify-end">
+                    <nav class="container mx-3 flex flex-1 justify-end top-0 right-0 left-0">
                         @auth
                             <a href="{{ url('/dashboard') }}"
                                 class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
@@ -942,18 +942,10 @@
                 @endif
             </header>
 
-            <main class="mt-6">
-                <section class="flex flex-col justify-center text-5xl font-extrabold tracking-tight leading-10 text-green-600 bg-white border border-solid shadow-sm border-zinc-950 max-md:text-4xl max-md:leading-10">
-                    <header class="flex flex-col items-center px-16 pt-20 w-full bg-zinc-950 max-md:pl-5 max-md:max-w-full max-md:text-4xl max-md:leading-10">
-                      <div class="flex overflow-hidden relative flex-col pt-20 mt-14 w-full max-w-[1185px] min-h-[885px] max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:leading-10">
-                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee60745495781fd5938b9bc8e1affffd45e92916b496324c58c2aa981e943b2b?apiKey=3128147c385b4f00860ed3e9b4b0da81&" alt="Background image" class="object-cover absolute inset-0 size-full" />
-                        <h1 class="relative self-start mt-6 max-md:max-w-full max-md:text-4xl max-md:leading-10">
-                          Temukan, belajar, <br /> dan tumbuh <br /> bersama SlimSlam, <br /> solusi kesehatan <br /> digital Anda
-                        </h1>
-                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d16ad674be7ca8f6fb45856380a1dbc52592c6c63c14d712cc653844976667bb?apiKey=3128147c385b4f00860ed3e9b4b0da81&" alt="Decorative image" class="self-end mt-72 max-w-full aspect-[2] w-[486px] max-md:mt-10" />
-                      </div>
-                    </header>
-                  </section>
+            <main>
+                <div>
+                    <img src="storage/home/home-bg.jpg" alt="">
+                </div>
             </main>
 
             <footer class="py-16 text-center text-sm text-black dark:text-white/70">
