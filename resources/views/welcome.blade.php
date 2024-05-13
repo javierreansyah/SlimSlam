@@ -24,35 +24,51 @@
         <div class="relative w-full">
             <header class="fixed right-0 left-0 bg-black bg-opacity-45">
                 @if (Route::has('login'))
-                    <nav class="flex bg-transparent-60 md:items-center md:justify-between px-10 py-7">
-                        <div class="flex gap-20">
-                            <span class="text-4xl text-green-500 font-semibold cursor-pointer gap-10 items-center">
+                    <nav class="flex bg-transparent-60 md:items-center md:justify-between px-10 py-3">
+                        <div class="flex gap-2">
+                            <div class="flex gap-2 text-green-500 font-semibold cursor-pointer items-center">
                                 <img class="h-10 inline items-center"
                                     src="https://seeklogo.com/images/B/bmw-logo-248C3D90E6-seeklogo.com.png">
-                                SlimSlam
-                            </span>
+                                <p>SlimSlam</p>
+                            </div>
+                            <div class="flex justify-start">
+                                <ul class="flex gap-2 items-center font-medium">
+                                    <li>
+                                        <a href="#" class="hover:text-primary text-white duration-500">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="hover:text-primary text-white duration-500">Plan</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="hover:text-primary text-white duration-500">About</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <ul class="flex gap-40 items-center font-medium">
-                            <li>
-                                <a href="#" class="text-xl hover:text-green-600 text-white duration-500">HOME</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-xl hover:text-green-600 text-white duration-500">PLAN</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-xl hover:text-green-600 text-white duration-500">ABOUT</a>
-                            </li>
-                        </ul>
-                        <div class="flex font-medium gap-10">
-                            <button
-                                class="bg-green-600 text-white hover:bg-green-900 px-4 py-3 rounded-full duration-500">
-                                SIGN IN
-                            </button>
-                            <button class="border-2 border-green-600 hover:border-green-900 hover:text-gray-300 text-white px-4 py-3 rounded-full duration-500">
-                                REGISTER
-                            </button>
+                        <div class="flex gap-2 items-center">
+                            <div class="flex font-medium gap-4">
+                                @auth
+                                    <a href="{{ url('/dashboard') }}"
+                                        class="bg-primary items-center text-white hover:bg-muted px-4 py-2 rounded-full duration-500">
+                                        Dashboard
+                                    </a>
+                                @else
+                                    <a href="{{ route('login') }}"
+                                        class="bg-primary items-center text-white hover:bg-muted px-4 py-2 rounded-full duration-500">
+                                        Sign In
+                                    </a>
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}"
+                                            class="items-center bg-card hover:bg-muted text-white px-4 py-2 rounded-full duration-500">
+                                            Register
+                                        </a>
+                                    @endif
+                                @endauth
+                            </div>
                         </div>
+
 
                     </nav>
                     {{-- @auth
