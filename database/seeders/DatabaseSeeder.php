@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
         for ($i = 1; $i <= 100; $i++) {
             $weight = $faker->numberBetween(50, 100);
             $height = $faker->numberBetween(150, 200);
-            $recordedAt = Carbon::now()->subDays($i * 7);
+            $recordedAt = Carbon::now()->subDays($i * 7 + 40);
 
             $userMeasurement = new UserMeasurement();
             $userMeasurement->user_id = $userId;

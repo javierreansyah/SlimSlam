@@ -17,18 +17,19 @@
                                     <div>
                                         <img class="aspect-[4/2] h-full w-full object-cover grayscale" src="{{ asset("storage/workout-pictures/placeholder.jpeg") }}" alt="" />
                                     </div>
-                                    <div class="h-[210px] space-y-1 p-6 text-foreground">
+                                    <div class="h-[160px] space-y-1 p-6 text-foreground">
                                         <h3 class="text-xl font-bold text-primary">{{ $workout->name }}</h3>
+
+                                        <p>{{ $workout->description }}</p>
                                         <p class="@if ($workout->difficulty === "easy")
                                             text-green-600
                                         @elseif ($workout->difficulty === "moderate")
                                             text-yellow-600
                                         @elseif ($workout->difficulty === "hard")
                                             text-red-600
-                                        @endif w-fit rounded bg-muted px-2 py-1">
+                                        @endif w-fit rounded bg-muted px-2 py-1 text-sm font-bold">
                                             {{ ucfirst($workout->difficulty) }}
                                         </p>
-                                        <p>{{ $workout->description }}</p>
                                     </div>
                                 </a>
                             </div>

@@ -9,33 +9,39 @@
         type: 'line',
         data: {
             labels: dates,
-            datasets: [{
-                label: 'Weight',
-                data: weightData,
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
+            datasets: [
+                {
+                    label: 'Weight',
+                    data: weightData,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                },
+            ],
         },
         options: {
             scales: {
-                xAxes: [{
-                    type: 'time',
-                    time: {
-                        unit: 'day'
+                xAxes: [
+                    {
+                        type: 'time',
+                        time: {
+                            unit: 'day',
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Date',
+                        },
                     },
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Date'
-                    }
-                }],
-                yAxes: [{
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Weight'
-                    }
-                }]
-            }
-        }
+                ],
+                yAxes: [
+                    {
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Weight',
+                        },
+                    },
+                ],
+            },
+        },
     });
 </script>

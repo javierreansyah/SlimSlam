@@ -6,24 +6,32 @@
     </x-slot>
 
     <div class="py-12">
-        <div id="description" class="mx-auto max-w-7xl sm:px-6 lg:px-8"></div>
+        <div id="description" class="mx-auto mb-4 max-w-7xl sm:px-6 lg:px-8">
+            <div class="relative overflow-hidden rounded">
+                <img class="aspect-[6/2] h-full w-full object-cover brightness-50" src="{{ asset('storage/workout-pictures/placeholder.jpeg') }}" alt="" />
+                <div class="absolute left-0 top-0 space-y-2 p-8">
+                    <h3 class="text-5xl font-extrabold text-primary">{{ $workout->name }}</h3>
+                    <p class="text-foreground">{{ $workout->description }}</p>
+                </div>
+            </div>
+        </div>
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="rounded bg-card">
                 <div id="timerDisplay" class="mb-4 py-4 text-center text-3xl font-bold text-primary">Timer</div>
             </div>
         </div>
         <div class="mx-auto flex max-w-7xl gap-4 space-y-2 sm:px-6 lg:px-8">
-            <button id="startBtn" class="w-full bg-primary px-4 py-4 text-white sm:rounded" onclick="startWorkout()">Start</button>
-            <button id="pauseBtn" class="hidden w-full bg-primary px-4 py-4 text-white sm:rounded" onclick="pauseWorkout()">Pause</button>
-            <button id="resumeBtn" class="hidden w-full bg-primary px-4 py-4 text-white sm:rounded" onclick="resumeWorkout()">Resume</button>
-            <button id="nextBtn" class="hidden w-full bg-primary px-4 py-4 text-white sm:rounded" onclick="nextExercise()">Next</button>
+            <button id="startBtn" class="w-full bg-primary px-4 py-4 font-bold text-white hover:bg-muted hover:text-primary sm:rounded" onclick="startWorkout()">Start</button>
+            <button id="pauseBtn" class="hidden w-full bg-card px-4 py-4 font-bold text-white hover:bg-primary sm:rounded" onclick="pauseWorkout()">Pause</button>
+            <button id="resumeBtn" class="hidden w-full bg-card px-4 py-4 font-bold text-white hover:bg-primary sm:rounded" onclick="resumeWorkout()">Resume</button>
+            <button id="nextBtn" class="hidden w-full bg-card px-4 py-4 font-bold text-white hover:bg-primary sm:rounded" onclick="nextExercise()">Next</button>
         </div>
         <div class="mx-auto max-w-7xl space-y-4 pt-4 sm:px-6 lg:px-8">
             @foreach ($workout->exercises as $index => $exercise)
                 <div id="exercise_{{ $index }}" class="overflow-hidden bg-card shadow-sm transition-all sm:rounded-lg">
                     <div class="flex">
                         <div id="image_{{ $index }}" class="h-[180px]">
-                            <img class="aspect-[6/5] h-full w-full object-cover grayscale" src="{{ asset('storage/exercise-pictures/placeholder.jpeg') }}" alt="" />
+                            <img class="aspect-[6/5] h-full w-full object-cover" src="{{ asset('storage/exercise-pictures/placeholder.jpeg') }}" alt="" />
                         </div>
                         <div class="p-6 text-foreground">
                             <h3 id="name_{{ $index }}" class="text-xl font-bold">{{ $exercise->name }}</h3>
@@ -42,6 +50,7 @@
         var timeLeft;
 
         function startWorkout() {
+            document.getElementById('description').remove();
             currentIndex = 0;
             highlightExercise();
             startTimer();
