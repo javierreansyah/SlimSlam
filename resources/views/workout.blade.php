@@ -1,28 +1,34 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-primary leading-tight">
+        <h2 class="text-xl font-semibold leading-tight text-primary">
             {{ $workout->name }}
         </h2>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-card rounded">
-                <div id="timerDisplay" class="text-center text-primary text-3xl font-bold mb-4 py-4">Timer</div>
+        <div id="description" class="mx-auto max-w-7xl sm:px-6 lg:px-8"></div>
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="rounded bg-card">
+                <div id="timerDisplay" class="mb-4 py-4 text-center text-3xl font-bold text-primary">Timer</div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-2">
-            <button id="startBtn" class="bg-primary text-white py-2 px-4 sm:rounded w-full" onclick="startWorkout()">Start</button>
-            <button id="pauseBtn" class="bg-primary text-white py-2 px-4 sm:rounded hidden w-full" onclick="pauseWorkout()">Pause</button>
-            <button id="resumeBtn" class="bg-primary text-white py-2 px-4 sm:rounded hidden w-full" onclick="resumeWorkout()">Resume</button>
-            <button id="nextBtn" class="bg-primary text-white py-2 px-4 sm:rounded hidden w-full" onclick="nextExercise()">Next</button>
+        <div class="mx-auto flex max-w-7xl gap-4 space-y-2 sm:px-6 lg:px-8">
+            <button id="startBtn" class="w-full bg-primary px-4 py-4 text-white sm:rounded" onclick="startWorkout()">Start</button>
+            <button id="pauseBtn" class="hidden w-full bg-primary px-4 py-4 text-white sm:rounded" onclick="pauseWorkout()">Pause</button>
+            <button id="resumeBtn" class="hidden w-full bg-primary px-4 py-4 text-white sm:rounded" onclick="resumeWorkout()">Resume</button>
+            <button id="nextBtn" class="hidden w-full bg-primary px-4 py-4 text-white sm:rounded" onclick="nextExercise()">Next</button>
         </div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-2 pt-4">
+        <div class="mx-auto max-w-7xl space-y-4 pt-4 sm:px-6 lg:px-8">
             @foreach ($workout->exercises as $index => $exercise)
-                <div id="exercise_{{ $index }}" class="bg-card overflow-hidden shadow-sm sm:rounded-lg transition-all">
-                    <div class="p-6 text-foreground">
-                        <h3 class="text-xl font-bold">{{ $exercise->name }}</h3>
-                        <p>{{ $exercise->pivot->description }}</p>
+                <div id="exercise_{{ $index }}" class="overflow-hidden bg-card shadow-sm transition-all sm:rounded-lg">
+                    <div class="flex">
+                        <div id="image_{{ $index }}" class="h-[180px]">
+                            <img class="aspect-[6/5] h-full w-full object-cover grayscale" src="{{ asset('storage/exercise-pictures/placeholder.jpeg') }}" alt="" />
+                        </div>
+                        <div class="p-6 text-foreground">
+                            <h3 id="name_{{ $index }}" class="text-xl font-bold">{{ $exercise->name }}</h3>
+                            <p>{{ $exercise->pivot->description }}</p>
+                        </div>
                     </div>
                 </div>
             @endforeach
@@ -48,8 +54,10 @@
         function startTimer() {
             timeLeft = exercises[currentIndex].pivot.duration;
             var timerElement = document.getElementById('timerDisplay');
-            timer = setInterval(function() {
-                timerElement.textContent = timeLeft + 's';
+            timer = setInterval(function () {
+                var minutes = Math.floor(timeLeft / 60);
+                var seconds = timeLeft % 60;
+                timerElement.textContent = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
                 timeLeft--;
                 if (timeLeft < 0) {
                     clearInterval(timer);
@@ -72,8 +80,10 @@
 
         function startTimerFromCurrentTime() {
             var timerElement = document.getElementById('timerDisplay');
-            timer = setInterval(function() {
-                timerElement.textContent = timeLeft + 's';
+            timer = setInterval(function () {
+                var minutes = Math.floor(timeLeft / 60);
+                var seconds = timeLeft % 60;
+                timerElement.textContent = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
                 timeLeft--;
                 if (timeLeft < 0) {
                     clearInterval(timer);
@@ -88,7 +98,7 @@
             currentExercise.remove();
             currentIndex++;
             if (currentIndex >= exercises.length) {
-                window.location.href = "/workouts";
+                window.location.href = '/workouts';
                 return;
             }
             if (currentIndex === exercises.length - 1) {
@@ -102,15 +112,21 @@
 
         function highlightExercise() {
             var currentExercise = document.getElementById('exercise_' + currentIndex);
-            var nextExercise = document.getElementById('exercise_' + currentIndex+1);
+            var currentExerciseName = document.getElementById('name_' + currentIndex);
+            var currentExerciseImage = document.getElementById('image_' + currentIndex);
+            var nextExercise = document.getElementById('exercise_' + currentIndex + 1);
             var exerciseElements = document.querySelectorAll('.bg-card');
-            exerciseElements.forEach(function(element) {
+            exerciseElements.forEach(function (element) {
                 element.classList.remove('bg-primary');
                 element.classList.remove('scale-110');
             });
             currentExercise.classList.add('bg-primary');
             currentExercise.classList.add('sm:scale-105');
-            currentExercise.classList.add('my-4');
+            currentExercise.classList.add('my-6');
+            currentExerciseName.classList.add('text-6xl');
+            currentExerciseName.classList.add('font-extrabold');
+            currentExerciseName.classList.add('pb-4');
+            currentExerciseImage.classList.add('h-[360px]');
         }
     </script>
 </x-app-layout>
