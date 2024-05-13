@@ -40,8 +40,7 @@
                                         <a href="#" class="hover:text-primary text-white duration-500">Plan</a>
                                     </li>
                                     <li>
-                                        <a href="#"
-                                            class="hover:text-primary text-white duration-500">About</a>
+                                        <a href="#" class="hover:text-primary text-white duration-500">About</a>
                                     </li>
                                 </ul>
                             </div>
@@ -68,27 +67,7 @@
                                 @endauth
                             </div>
                         </div>
-
-
                     </nav>
-                    {{-- @auth
-                            <a href="{{ url('/dashboard') }}"
-                                class="rounded-md px-3 py-2 ring-1 ring-transparent transition hover:text-muted-foreground text-foreground bg-green-500">
-                                Dashboard
-                            </a>
-                        @else
-                            <a href="{{ route('login') }}"
-                                class="rounded-md px-3 py-2 ring-1 ring-transparent transition hover:text-muted-foreground text-foreground">
-                                Log in
-                            </a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}"
-                                    class="rounded-md px-3 py-2 ring-1 ring-transparent transition hover:text-muted-foreground text-foreground">
-                                    Register
-                                </a>
-                            @endif
-                        @endauth --}}
                 @endif
             </header>
 
