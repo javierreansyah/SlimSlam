@@ -8,16 +8,25 @@
     <div class="py-12">
         <div id="description" class="mx-auto mb-4 max-w-7xl sm:px-6 lg:px-8">
             <div class="relative overflow-hidden rounded">
-                <img class="aspect-[6/2] h-full w-full object-cover brightness-50" src="{{ asset('storage/workout-pictures/placeholder.jpeg') }}" alt="" />
+                <img class="aspect-[6/2] h-full w-full object-cover brightness-50" src="{{ asset("storage/workout-pictures/placeholder.jpeg") }}" alt="" />
                 <div class="absolute left-0 top-0 space-y-2 p-8">
                     <h3 class="text-5xl font-extrabold text-primary">{{ $workout->name }}</h3>
-                    <p class="text-foreground">{{ $workout->description }}</p>
+                    <p class="max-w-[400px] text-foreground">{{ $workout->description }}</p>
+                    <p class="@if ($workout->difficulty === "easy")
+                        text-green-600
+                    @elseif ($workout->difficulty === "moderate")
+                        text-yellow-600
+                    @elseif ($workout->difficulty === "hard")
+                        text-red-600
+                    @endif w-fit rounded bg-muted px-2 py-1 text-sm font-bold opacity-80">
+                        {{ ucfirst($workout->difficulty) }}
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mx-auto mb-4 max-w-7xl sm:px-6 lg:px-8">
             <div class="rounded bg-card">
-                <div id="timerDisplay" class="mb-4 py-4 text-center text-3xl font-bold text-primary">Timer</div>
+                <div id="timerDisplay" class="py-4 text-center text-3xl font-bold text-primary">Timer</div>
             </div>
         </div>
         <div class="mx-auto flex max-w-7xl gap-4 space-y-2 sm:px-6 lg:px-8">
@@ -31,7 +40,7 @@
                 <div id="exercise_{{ $index }}" class="overflow-hidden bg-card shadow-sm transition-all sm:rounded-lg">
                     <div class="flex">
                         <div id="image_{{ $index }}" class="h-[180px]">
-                            <img class="aspect-[6/5] h-full w-full object-cover" src="{{ asset('storage/exercise-pictures/placeholder.jpeg') }}" alt="" />
+                            <img class="aspect-[6/5] h-full w-full object-cover" src="{{ asset("storage/exercise-pictures/placeholder.jpeg") }}" alt="" />
                         </div>
                         <div class="p-6 text-foreground">
                             <h3 id="name_{{ $index }}" class="text-xl font-bold">{{ $exercise->name }}</h3>
@@ -132,7 +141,7 @@
             currentExercise.classList.add('bg-primary');
             currentExercise.classList.add('sm:scale-105');
             currentExercise.classList.add('my-6');
-            currentExerciseName.classList.add('text-6xl');
+            currentExerciseName.classList.add('text-4xl');
             currentExerciseName.classList.add('font-extrabold');
             currentExerciseName.classList.add('pb-4');
             currentExerciseImage.classList.add('h-[360px]');
