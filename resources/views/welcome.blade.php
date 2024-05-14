@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>SlimSlam</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,9 +22,9 @@
 <body class="font-sans antialiased bg-background">
     <div class="relative min-h-screen flex justify-center ">
         <div class="relative w-full">
-            <header class="fixed right-0 left-0 bg-black bg-opacity-45">
+            <header class="fixed right-0 left-0 bg-card">
                 @if (Route::has('login'))
-                    <nav class="flex bg-transparent-60 md:items-center md:justify-between px-10 py-3">
+                    <nav class="flex bg-transparent-60 items-center justify-between px-10 py-5">
                         <div class="flex gap-2">
                             <div class="flex gap-2 text-green-500 font-semibold cursor-pointer items-center">
                                 <img class="h-10 inline items-center"
@@ -73,7 +73,7 @@
 
             <main>
                 <div>
-                    <img src="storage/home/home-bg.jpg" alt="">
+                    <img class="bg-opacity-45" src="storage/home/home-bg.jpg" alt="">
                 </div>
             </main>
 
