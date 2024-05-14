@@ -63,7 +63,7 @@
                         <a class="rounded bg-primary px-5 py-2 font-medium text-foreground" href="{{ route('login') }}">Login</a>
                         <a class="rounded bg-card px-5 py-2 font-medium text-primary" href="{{ route('register') }}">Register</a>
                     </div>
-                    {{-- Buat login logot --}}
+                    {{-- Buat login logout --}}
                 @endauth
             </div>
 
