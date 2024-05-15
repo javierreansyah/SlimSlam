@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="overflow-hidden">
-                        <img class="max-h-screen ml-40 mt-40" src="storage/home/model.png" alt="Model">
+                        <img class="hidden md:block h-[720px] mr-60 mt-40" src="storage/home/model.png" alt="Model">
                     </div>
                 </div>
 
@@ -87,7 +87,7 @@
             </main>
             <footer class="flex flex-col items-center justify-between bg-black p-3 text-sm text-white">
                 <div class="flex flex-col space-y-2 text-center sm:flex-row sm:space-x-4">
-                    <p>© 2024 SlimSlam</p>
+                    <p>Copyright © 2024 SlimSlam | All Rights Reserved</p>
                 </div>
                 <div class="flex justify-center py-2 sm:mt-0">
                     <a href="/">
