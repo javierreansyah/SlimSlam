@@ -30,12 +30,12 @@
             </header>
             <main class="">
                 <div class="flex h-screen bg-cover bg-center" style="background-image: url('storage/home/home-bg.jpg')">
-                    <div class="mt-48 mx-32 max-w-7xl leading-tight text-white">
-                        <p class="text-7xl font-black leading-tight">Empowering <br> Wellness <br> Inspiring Fitness</p>
-                        <p class="text-2xl max-w-sm pt-4 font-light leading-tight">Owned by Javier Aahmes Reansyah</p>
+                    <div class="mt-40 mx-auto px-10 leading-tight text-white">
+                        <p class="text-4xl md:text-2xl lg:text-5xl xl:text-7xl font-black leading-tight">Empowering <br> Wellness <br> Inspiring Fitness</p>
+                        <p class="text-xl text-muted-foreground max-w-sm pt-4 font-normal leading-tight">Slam into Fitness with <span class="text-primary font-semibold">SlimSlam</span></p>
 
                         <div class="mt-10">
-                            <a href="https://www.linkedin.com/in/javierreansyah/" class="text-3xl rounded bg-primary px-5 py-3 font-medium text-background hover:bg-muted" target="_blank">Try Now</a>
+                            <a href="https://www.linkedin.com/in/javierreansyah/" class="text-xl rounded bg-primary px-5 py-3 font-medium text-background hover:bg-muted" target="_blank">Join Now</a>
                         </div>
                     </div>
 
@@ -46,7 +46,7 @@
 
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="bg-background shadow-lg rounded-lg p-8">
-                        <h1 class="text-4xl font-bold text-center text-primary mb-6">About SlimSlam</h1>
+                        <h1 class="text-4xl font-bold text-primary mb-6 justify-start">About SlimSlam</h1>
                         <p class="text-lg text-white mb-4">
                             Welcome to SlimSlam, your ultimate partner in achieving a healthier and more active lifestyle. Our platform offers a range of features tailored to help you reach your fitness goals with ease and enjoyment. Here's what you can expect from SlimSlam:
                         </p>
