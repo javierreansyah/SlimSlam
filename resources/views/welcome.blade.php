@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="{{ asset('https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png') }}">
+    <link rel="icon" href="{{ asset('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuXFymO8BOBat3VO0PFlx6dJ6TTch_F-sSD-RdCUlWHw&s') }}">
     <title>SlimSlam</title>
 
     <!-- Fonts -->
