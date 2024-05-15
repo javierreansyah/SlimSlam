@@ -20,7 +20,7 @@
                             {{ __('Workouts') }}
                         </x-nav-link>
                     @else
-                        <x-nav-link>
+                        <x-nav-link :href="'#about'">
                             {{ __('About') }}
                         </x-nav-link>
                     @endauth

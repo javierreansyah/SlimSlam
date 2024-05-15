@@ -48,7 +48,7 @@
                     </div>
                 </div>
 
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" id="about">
                     <div class="bg-background shadow-lg rounded-lg p-8">
                         <h1 class="text-4xl font-bold text-primary mb-6 justify-start">About SlimSlam</h1>
                         <div class="bg-card rounded-lg">
