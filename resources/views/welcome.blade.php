@@ -35,7 +35,7 @@
                         <p class="text-2xl max-w-sm pt-4 font-light leading-tight">Owned by Javier Aahmes Reansyah</p>
 
                         <div class="mt-10">
-                            <a href="https://www.instagram.com/reansyahlol/" class="text-3xl rounded bg-primary px-5 py-3 font-medium text-background hover:bg-muted" target="_blank">Try Now</a>
+                            <a href="https://www.linkedin.com/in/javierreansyah/" class="text-3xl rounded bg-primary px-5 py-3 font-medium text-background hover:bg-muted" target="_blank">Try Now</a>
                         </div>
                     </div>
 
@@ -44,10 +44,6 @@
                     </div>
                 </div>
 
-                {{-- <div class="flex h-screen bg-cover bg-center justify-center" style="background-image: url('storage/home/home-bg.jpg')">
-                    <p class="text-6xl mt-32 font-black leading-tight text-white">About</p>
-                    <p></p>
-                </div> --}}
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="bg-background shadow-lg rounded-lg p-8">
                         <h1 class="text-4xl font-bold text-center text-primary mb-6">About SlimSlam</h1>
