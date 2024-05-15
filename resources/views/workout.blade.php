@@ -8,7 +8,7 @@
     <div class="py-12">
         <div id="description" class="mx-auto mb-4 max-w-7xl sm:px-6 lg:px-8">
             <div class="relative overflow-hidden rounded">
-                <img class="aspect-[6/2] h-full w-full object-cover brightness-50" src="{{ asset("storage/workout-pictures/placeholder.jpeg") }}" alt="" />
+                <img class="aspect-[6/2] h-full w-full object-cover brightness-50" src="{{ $workout->image ? asset("storage/workout-pictures/" . $workout->image) : asset("storage/workout-pictures/placeholder.jpeg") }}" alt="" />
                 <div class="absolute left-0 top-0 space-y-2 p-8">
                     <h3 class="text-5xl font-extrabold text-primary">{{ $workout->name }}</h3>
                     <p class="max-w-[400px] text-foreground">{{ $workout->description }}</p>
@@ -40,7 +40,7 @@
                 <div id="exercise_{{ $index }}" class="overflow-hidden bg-card shadow-sm transition-all sm:rounded-lg">
                     <div class="flex">
                         <div id="image_{{ $index }}" class="h-[180px]">
-                            <img class="aspect-[6/5] h-full w-full object-cover" src="{{ asset("storage/exercise-pictures/placeholder.jpeg") }}" alt="" />
+                            <img class="aspect-[6/5] h-full w-full object-cover" src="{{ $exercise->image ? asset("storage/exercise-pictures/" . $exercise->image) : asset("storage/exercise-pictures/placeholder.jpeg") }}" alt="" />
                         </div>
                         <div class="p-6 text-foreground">
                             <h3 id="name_{{ $index }}" class="text-xl font-bold">{{ $exercise->name }}</h3>
