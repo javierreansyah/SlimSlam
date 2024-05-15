@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Laravel</title>
+    <link rel="icon" href="{{ asset('https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png') }}">
+    <title>SlimSlam</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,7 +33,7 @@
                     <div class="mt-40 mx-auto px-10 leading-tight text-white">
                         <p class="text-4xl md:text-2xl lg:text-5xl xl:text-7xl font-black leading-tight">Empowering <br>
                             Wellness <br> Inspiring Fitness</p>
-                        <p class="text-xl text-muted-foreground max-w-sm pt-4 font-normal leading-tight">Slam into
+                        <p class="text-xl text-muted-foreground max-w-sm pt-4 font-light leading-tight">Slam into
                             Fitness with <span class="text-primary font-semibold">SlimSlam</span></p>
 
                         <div class="mt-10">
