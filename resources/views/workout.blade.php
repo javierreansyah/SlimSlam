@@ -138,10 +138,11 @@
                 element.classList.remove('bg-primary');
                 element.classList.remove('scale-110');
             });
+            currentExerciseName.classList.remove('text-xl');
             currentExercise.classList.add('bg-primary');
             currentExercise.classList.add('sm:scale-105');
             currentExercise.classList.add('my-6');
-            currentExerciseName.classList.add('text-4xl');
+            currentExerciseName.classList.add('text-5xl');
             currentExerciseName.classList.add('font-extrabold');
             currentExerciseName.classList.add('pb-4');
             currentExerciseImage.classList.add('h-[360px]');
