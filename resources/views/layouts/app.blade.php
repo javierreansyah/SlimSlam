@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-        <link rel="icon" href="{{ asset('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuXFymO8BOBat3VO0PFlx6dJ6TTch_F-sSD-RdCUlWHw&s') }}">
+        <link rel="icon" href="{{ asset('storage/Icon.png') }}" />
         <title>{{ config('app.name', 'SlimSlam') }}</title>
 
         <!-- Fonts -->

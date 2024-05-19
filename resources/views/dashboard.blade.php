@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
-            <div class="flex gap-6">
+            <div class="space-y-6 lg:flex lg:gap-6 lg:space-y-0">
                 @if (abs(now()->diffInDays(auth()->user()->last_weight_recorded_at)) >= 7)
                     <div class="bg-card p-8 shadow-sm sm:rounded-lg">
                         <h3 class="text-2xl font-bold text-primary">Weekly Weight Measurement</h3>

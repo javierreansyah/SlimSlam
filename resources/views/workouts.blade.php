@@ -15,7 +15,7 @@
                             <div href="" class="overflow-hidden bg-card shadow-sm sm:rounded-lg">
                                 <a href="/workouts/{{ $workout->slug }}">
                                     <div>
-                                        <img class="aspect-[2/1] h-full w-full object-cover grayscale" src="{{ $workout->image ? asset("storage/workout-pictures/" . $workout->image) : asset("storage/workout-pictures/placeholder.jpeg") }}" alt="" />
+                                        <img class="aspect-[2/1] h-full w-full object-cover" src="{{ $workout->image ? asset("storage/workout-pictures/" . $workout->image) : asset("storage/workout-pictures/placeholder.jpeg") }}" alt="" />
                                     </div>
                                     <div class="h-[160px] space-y-1 p-6 text-foreground">
                                         <h3 class="text-xl font-bold text-primary">{{ $workout->name }}</h3>

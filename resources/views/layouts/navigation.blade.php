@@ -1,4 +1,4 @@
-<nav x-data="{ open: false, scrolled: false }" x-init="window.addEventListener('scroll', () => (scrolled = window.scrollY > 0))" :class="{ 'bg-transparent': !scrolled, 'bg-background border-b ': scrolled }" class="fixed z-50 w-full border-b-border transition-all">
+<nav x-data="{ open: false, scrolled: false }" x-init="window.addEventListener('scroll', () => (scrolled = window.scrollY > 0))" :class="{ 'md:bg-transparent': !scrolled, 'md:bg-background border-b ': scrolled }" class="fixed z-50 w-full border-b-border bg-background transition-all">
     <!-- Primary Navigation Menu -->
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 justify-between">
