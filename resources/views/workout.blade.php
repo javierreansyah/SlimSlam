@@ -7,10 +7,10 @@
 
     <div class="py-12">
         <div id="description" class="mx-auto mb-4 max-w-7xl sm:px-6 lg:px-8">
-            <div class="relative overflow-hidden rounded">
-                <img class="aspect-[6/2] h-full w-full object-cover brightness-50" src="{{ $workout->image ? asset("storage/workout-pictures/" . $workout->image) : asset("storage/workout-pictures/placeholder.jpeg") }}" alt="" />
+            <div class="relative overflow-hidden sm:rounded">
+                <img class="aspect-[3/2] h-full w-full object-cover brightness-50 md:aspect-[6/2]" src="{{ $workout->image ? asset("storage/workout-pictures/" . $workout->image) : asset("storage/workout-pictures/placeholder.jpeg") }}" alt="" />
                 <div class="absolute left-0 top-0 space-y-2 p-8">
-                    <h3 class="text-5xl font-extrabold text-primary">{{ $workout->name }}</h3>
+                    <h3 class="font-extrabold text-primary md:text-5xl">{{ $workout->name }}</h3>
                     <p class="max-w-[400px] text-foreground">{{ $workout->description }}</p>
                     <p class="@if ($workout->difficulty === "easy")
                         text-green-600
@@ -38,9 +38,9 @@
         <div class="mx-auto max-w-7xl space-y-4 pt-4 sm:px-6 lg:px-8">
             @foreach ($workout->exercises as $index => $exercise)
                 <div id="exercise_{{ $index }}" class="overflow-hidden bg-card shadow-sm transition-all sm:rounded-lg">
-                    <div class="flex">
+                    <div class="md:flex">
                         <div id="image_{{ $index }}" class="h-[180px]">
-                            <img class="aspect-[6/5] h-full w-full object-cover" src="{{ $exercise->image ? asset("storage/exercise-pictures/" . $exercise->image) : asset("storage/exercise-pictures/placeholder.jpeg") }}" alt="" />
+                            <img class="aspect-[1/2] h-full w-full object-cover md:aspect-[6/5]" src="{{ $exercise->image ? asset("storage/exercise-pictures/" . $exercise->image) : asset("storage/exercise-pictures/placeholder.jpeg") }}" alt="" />
                         </div>
                         <div class="p-6 text-foreground">
                             <h3 id="name_{{ $index }}" class="text-xl font-bold">{{ $exercise->name }}</h3>
@@ -142,10 +142,11 @@
             currentExercise.classList.add('bg-primary');
             currentExercise.classList.add('sm:scale-105');
             currentExercise.classList.add('my-6');
-            currentExerciseName.classList.add('text-5xl');
+            currentExerciseName.classList.add('sm:text-5xl');
+            currentExerciseName.classList.add('text-3xl');
             currentExerciseName.classList.add('font-extrabold');
             currentExerciseName.classList.add('pb-4');
-            currentExerciseImage.classList.add('h-[360px]');
+            currentExerciseImage.classList.add('md:h-[360px]');
         }
     </script>
 </x-app-layout>

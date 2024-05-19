@@ -7,18 +7,18 @@
 
     <div class="py-12">
         <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
-            <div class="space-y-6 lg:flex lg:gap-6 lg:space-y-0">
+            <div class="space-y-6 xl:flex xl:gap-6 xl:space-y-0">
                 @if (abs(now()->diffInDays(auth()->user()->last_weight_recorded_at)) >= 7)
                     <div class="bg-card p-8 shadow-sm sm:rounded-lg">
                         <h3 class="text-2xl font-bold text-primary">Weekly Weight Measurement</h3>
                         <form method="post" action="{{ route('profile.storeMeasurement') }}" class="mt-6 space-y-6">
                             @csrf
-                            <div class="flex gap-2">
+                            <div class="space-y-4 sm:flex sm:gap-2 sm:space-y-0">
                                 <div>
-                                    <x-text-input id="weight" name="weight" type="number" class="block h-10" placeholder="70" required />
+                                    <x-text-input id="weight" name="weight" type="number" class="block h-10 w-full sm:w-fit" placeholder="70" required />
                                 </div>
                                 <div>
-                                    <x-primary-button class="h-10">{{ __('Save') }}</x-primary-button>
+                                    <x-primary-button class="h-10 w-full sm:w-fit">{{ __('Save') }}</x-primary-button>
                                 </div>
                             </div>
                             <x-input-error class="mt-2" :messages="$errors->get('weight')" />
@@ -26,11 +26,21 @@
                     </div>
                 @endif
 
-                <div class="flex w-full items-center gap-4 overflow-hidden bg-card p-8 shadow-sm sm:rounded-lg">
-                    <h3 class="text-5xl font-bold text-primary">{{ number_format($bmi['bmi'], 1) }}</h3>
-                    <div>
-                        <h4 class="font-bold text-foreground">{{ $bmi['category'] }}</h4>
-                        <p class="text-foreground">{{ $bmi['message'] }}</p>
+                <div class="space-y-6 md:flex md:gap-6 md:space-y-0">
+                    <div class="h-full w-full items-center gap-4 space-y-4 overflow-hidden bg-card p-8 shadow-sm sm:flex sm:space-y-0 sm:rounded-lg">
+                        <h3 class="text-5xl font-bold text-primary">{{ number_format($bmi['bmi'], 1) }}</h3>
+                        <div>
+                            <h4 class="font-bold text-foreground">{{ $bmi['category'] }}</h4>
+                            <p class="text-foreground">{{ $bmi['message'] }}</p>
+                        </div>
+                    </div>
+                    <div class="flex h-full gap-6 sm:space-y-0 md:block md:gap-0 md:space-y-6">
+                        <div class="w-full items-center space-y-4 overflow-hidden bg-card p-8 shadow-sm sm:space-y-0 sm:rounded-lg">
+                            <h3 class="text-3xl font-bold text-primary">{{ auth()->user()->height }}cm</h3>
+                        </div>
+                        <div class="w-full items-center space-y-4 overflow-hidden bg-card p-8 shadow-sm sm:space-y-0 sm:rounded-lg">
+                            <h3 class="text-3xl font-bold text-primary">{{ auth()->user()->weight }}kg</h3>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -12,7 +12,7 @@
                     <h2 class="text-5xl font-bold text-primary">{{ ucfirst($difficulty) }}</h2>
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         @foreach ($workoutsByDifficulty as $workout)
-                            <div href="" class="overflow-hidden bg-card shadow-sm sm:rounded-lg">
+                            <div href="" class="h-[360px] overflow-hidden bg-card shadow-sm sm:rounded-lg">
                                 <a href="/workouts/{{ $workout->slug }}">
                                     <div>
                                         <img class="aspect-[2/1] h-full w-full object-cover" src="{{ $workout->image ? asset("storage/workout-pictures/" . $workout->image) : asset("storage/workout-pictures/placeholder.jpeg") }}" alt="" />

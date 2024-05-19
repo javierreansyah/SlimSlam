@@ -19,7 +19,7 @@
         <div class="flex min-h-screen flex-col items-center bg-background pt-6 sm:justify-center sm:pt-0">
             <div>
                 <a href="/">
-                    <x-application-logo class="h-20 w-20 fill-current text-primary" />
+                    <img src="{{ asset('storage/SlimSlam.png') }}" alt="" />
                 </a>
             </div>
 

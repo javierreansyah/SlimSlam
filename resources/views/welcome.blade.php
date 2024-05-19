@@ -43,7 +43,7 @@
                             </p>
 
                             <div class="mt-10">
-                                <a href="https://www.linkedin.com/in/javierreansyah/" class="rounded bg-primary px-5 py-3 text-xl font-medium text-background hover:bg-muted" target="_blank">Join Now</a>
+                                <a href="{{ route('register') }}" class="rounded bg-primary px-5 py-3 text-xl font-medium text-background hover:bg-muted" target="_blank">Join Now</a>
                             </div>
                         </div>
 

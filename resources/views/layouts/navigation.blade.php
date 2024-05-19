@@ -19,10 +19,6 @@
                         <x-nav-link :href="route('workouts.index')" :active="request()->routeIs('workouts.index')">
                             {{ __('Workouts') }}
                         </x-nav-link>
-                    @else
-                        <x-nav-link :href="'#about'">
-                            {{ __('About') }}
-                        </x-nav-link>
                     @endauth
                 </div>
             </div>
